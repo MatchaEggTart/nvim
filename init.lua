@@ -1,4 +1,5 @@
 require("config.options")
 require("config.keymaps")
 
-require("plugins.lazy-nvim")
+require("config.lazy")
+require("plugins.tokyonight")
