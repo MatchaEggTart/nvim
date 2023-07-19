@@ -79,4 +79,11 @@ tags
 # Persistent undo
 [._]*.un~
 
+
+
+### lazy ###
+# .json
+lazy-lock.json
+
+
 # End of https://www.toptal.com/developers/gitignore/api/linux,vim,lua
