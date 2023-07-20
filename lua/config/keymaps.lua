@@ -11,7 +11,7 @@ local opt = { noremap = true, silent = true }
 map("n", "<leader>w", ":w<CR>", opt)
 map("n", "<leader>wq", ":wqa!<CR>", opt)
 ---- 退出
----- map("n", "qq", ":q!<CR>", opt)
+map("n", "<leader>qq", ":q!<CR>", opt)
 map("n", "<leader>q", ":qa!<CR>", opt)
 
 ------------------------------------------------------------------
