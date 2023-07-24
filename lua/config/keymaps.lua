@@ -11,8 +11,8 @@ local opt = { noremap = true, silent = true }
 map("n", "<leader>w", ":w<CR>", opt)
 map("n", "<leader>wq", ":wqa!<CR>", opt)
 ---- 退出
-map("n", "<leader>qq", ":q!<CR>", opt)
-map("n", "<leader>q", ":qa!<CR>", opt)
+map("n", "<leader>q", ":q!<CR>", opt)
+map("n", "<leader>qa", ":qa!<CR>", opt)
 
 ------------------------------------------------------------------
 -- windows 分屏快捷键
