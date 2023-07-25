@@ -6,6 +6,7 @@ return {
       local configs = require("nvim-treesitter.configs")
       configs.setup({
         ensure_installed = {
+          -- :TSInstall 要加参数(安装的语言)
           "vim",
           "vimdoc",
           "lua",
