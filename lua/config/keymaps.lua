@@ -148,3 +148,8 @@ map("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
 map("n", "<leader>bo", ":BufferLineCloseRight<CR>:BufferLineCloseLeft<CR>", opt)
 -- 关闭选中标签页
 map("n", "<leader>bp", ":BufferLinePickClose<CR>", opt)
+
+
+-- treesitter 折叠
+map("n", "zc", ":foldclose<CR>", opt)
+map("n", "zo", ":foldopen<CR>", opt)
