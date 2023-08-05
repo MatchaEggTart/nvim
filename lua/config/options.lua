@@ -73,8 +73,7 @@ o.autoread = true
 bo.autoread = true
 
 -- 禁止折行
-wo.wrap = false
-
+wo.wrap = true
 
 -- 光标在行首尾时<Left><Right>可以跳到下一行
 o.whichwrap = '<,>,[,]'
