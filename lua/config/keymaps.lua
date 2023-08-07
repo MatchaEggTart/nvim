@@ -98,7 +98,7 @@ local pluginKeys = {}
 -- nvim-tree
 ------------------------------------------------------------------
 -- map("n", "<C-t>", ":NvimTreeToggle<CR>", opt)
-map("n", "<leader>t", ":NvimTreeToggle<CR>", opt)
+-- map("n", "<leader>t", ":NvimTreeToggle<CR>", opt)
 -- 列表快捷键
 pluginKeys.nvimTreeList = { -- 打开文件或文件夹
   { key = { "o", "<2-LeftMouse>" }, action = "edit" },
@@ -153,3 +153,7 @@ map("n", "<leader>bp", ":BufferLinePickClose<CR>", opt)
 -- treesitter 折叠
 map("n", "zc", ":foldclose<CR>", opt)
 map("n", "zo", ":foldopen<CR>", opt)
+
+------------------------------------------------------------------
+-- Telescope
+------------------------------------------------------------------
