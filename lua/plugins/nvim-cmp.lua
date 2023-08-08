@@ -74,6 +74,5 @@ return {
           { name = 'cmdline' }
         })
     })
-
   end,
 }

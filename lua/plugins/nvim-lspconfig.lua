@@ -8,10 +8,15 @@ return {
     -- Set up lspconfig.
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
     
+    -- HTML
+    lspconfig.html.setup {
+      capabilities = capabilities,
+    }
     -- Lua
     lspconfig.lua_ls.setup {
       capabilities = capabilities,
       -- Setup language servers.
+
       settings = {
         Lua = {
           runtime = {
@@ -20,7 +25,7 @@ return {
           },
           diagnostics = {
             -- Get the language server to recognize the `vim` global
-            globals = {'vim'},
+            globals = {"vim"},
           },
           workspace = {
             checkThirdParty = false,
