@@ -10,7 +10,9 @@ return {
     
     -- HTML
     lspconfig.html.setup {
+      -- sudo npm -g install --save vscode-html-languageservice
       capabilities = capabilities,
+      cmd = { "vscode-html-language-server", "--stdio" },
     }
     -- Lua
     lspconfig.lua_ls.setup {
