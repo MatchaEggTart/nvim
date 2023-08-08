@@ -2,9 +2,9 @@ return {
   -- using lazy.nvim
   {
     'akinsho/bufferline.nvim',
-    lazy = false,
     version = "*",
     dependencies = 'nvim-tree/nvim-web-devicons',
+    lazy = false,
     config = function()
       vim.opt.termguicolors = true
       require("bufferline").setup{
