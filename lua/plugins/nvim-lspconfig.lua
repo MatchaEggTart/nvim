@@ -2,7 +2,12 @@ return {
   "neovim/nvim-lspconfig",
   -- event = "VeryLazy",
   -- lazy = true,
+    dependencies = {
+      -- "nvim-lua/lsp-status.nvim",
+    },
   config = function()
+    -- local lsp_status = require('lsp-status')
+    -- lsp_status.register_progress()
     -- Setup language servers.
     local lspconfig = require('lspconfig')
 
@@ -22,6 +27,15 @@ return {
 
       },
     }
+
+    -- typescript-language-server tsserver (keywords: typescript, javascript)
+    lspconfig.tsserver.setup {
+      capabilities = capabilities,
+      -- filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+      autostart = true,
+      cmd = { "typescript-language-server", "--stdio" },
+    }
+
     -- Lua
     lspconfig.lua_ls.setup {
       capabilities = capabilities,
@@ -49,7 +63,5 @@ return {
         },
       },
     }
-
-
   end,
 }

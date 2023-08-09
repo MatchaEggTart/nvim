@@ -8,7 +8,7 @@ local wo = vim.wo
 
 -- utf8
 vim.g.encoding = "UTF-8"
-o.fileencoding = 'UTF-8'
+vim.o.fileencoding = 'UTF-8'
 
 -- jkhl 移动时光标周围保留8行
 o.scrolloff = 8
