@@ -17,7 +17,7 @@ return {
     -- HTML
     lspconfig.html.setup {
       -- settings = {
-      -- sudo npm -g install --save vscode-html-languageservice
+      -- sudo npm install -g --save vscode-html-languageservice
       -- on_attach = on_attach,
       capabilities = capabilities,
       cmd = { "vscode-html-language-server", "--stdio" },
@@ -28,7 +28,7 @@ return {
       },
     }
 
-    -- typescript-language-server tsserver (keywords: typescript, javascript)
+    -- sudo npm install -g typescript-language-server 
     lspconfig.tsserver.setup {
       capabilities = capabilities,
       -- filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
