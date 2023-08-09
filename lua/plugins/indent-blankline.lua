@@ -1,7 +1,7 @@
 return {
-  { 
+  {
     "lukas-reineke/indent-blankline.nvim",
-    -- lazy = false,
-    event = "VeryLazy",
+    lazy = true,
+    -- event = "VeryLazy",
   }
 }
