@@ -1,7 +1,7 @@
 return {
   "neovim/nvim-lspconfig",
   -- event = "VeryLazy",
-  -- lazy = true,
+  -- lazy = false,
   dependencies = {
     -- "nvim-lua/lsp-status.nvim",
   },
@@ -16,7 +16,6 @@ return {
     -- local on_attach = require("lsp.lsp-attach").on_attach
     -- HTML
     lspconfig.html.setup {
-      -- settings = {
       -- sudo npm install -g --save vscode-html-languageservice
       -- on_attach = on_attach,
       capabilities = capabilities,
@@ -47,7 +46,7 @@ return {
     lspconfig.lua_ls.setup {
       capabilities = capabilities,
       -- Setup language servers.
-
+      -- cmd = { "lua-language-server" },
       settings = {
         Lua = {
           runtime = {
