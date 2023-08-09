@@ -2,9 +2,9 @@ return {
   "neovim/nvim-lspconfig",
   -- event = "VeryLazy",
   -- lazy = true,
-    dependencies = {
-      -- "nvim-lua/lsp-status.nvim",
-    },
+  dependencies = {
+    -- "nvim-lua/lsp-status.nvim",
+  },
   config = function()
     -- local lsp_status = require('lsp-status')
     -- lsp_status.register_progress()
@@ -24,16 +24,23 @@ return {
       -- }
       filetypes = {
         "html",
-
       },
+      autostart = true,
     }
 
-    -- sudo npm install -g typescript-language-server 
+    -- sudo npm install -g typescript typescript-language-server 
     lspconfig.tsserver.setup {
       capabilities = capabilities,
-      -- filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-      autostart = true,
-      cmd = { "typescript-language-server", "--stdio" },
+      single_file_support = true,
+      init_options = {
+        preferences = {
+          includeCompletionsWithSnippetText = true,
+          includeCompletionsWithInsertText = true,
+        },
+        filetypes = { "js", "javascript", "typescript", "typescriptreact", "typescript.tsx" },
+        autostart = true,
+        cmd = { "typescript-language-server", "--stdio" },
+      }
     }
 
     -- Lua
