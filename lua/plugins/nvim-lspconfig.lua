@@ -25,7 +25,7 @@ return {
       filetypes = {
         "html",
       },
-      autostart = true,
+      -- autostart = true,
     }
 
     -- sudo npm install -g typescript typescript-language-server 
