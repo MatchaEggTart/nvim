@@ -1,136 +1,127 @@
--- local opt = vim.opt
--- 全局属性，我们可以利用 options来记忆
-local o = vim.opt
--- 缓冲区属性，我们可以利用 buffer-option来记忆
-local bo = vim.bo
--- 窗口属性, 我们可以利用 window-option来记忆
-local wo = vim.wo
+-- This file is automatically loaded by plugins.core
+vim.g.mapleader = ","
+vim.g.maplocalleader = "\\"
 
 -- utf8
 vim.g.encoding = "UTF-8"
 vim.o.fileencoding = 'UTF-8'
 
--- jkhl 移动时光标周围保留8行
-o.scrolloff = 8
-o.sidescrolloff = 8
+local opt = vim.opt
 
--- 行号
-wo.number = true
--- wo.relativenumber = true
-
--- 高亮所在行
-wo.cursorline = true
-
--- 语法高亮
--- o.syntax = true
-
--- 开启文件类型检测
--- o.filetype = true
-
--- 显示左侧图标指示列
-wo.signcolumn = "yes"
-
--- 右侧参考线，超过表示代码太长了，考虑换行
--- vim.wo.colorcolumn = "80"
-
--- 缩进
-o.tabstop = 2
-bo.tabstop = 2
-o.shiftwidth = 2
-o.softtabstop = 2
-o.shiftround = true
-o.expandtab = true
-o.autoindent = true
-
--- >> << 时移动长度
-o.shiftwidth = 2
-bo.shiftwidth = 2
-
--- 空格替代tab
-o.expandtab = true
-bo.expandtab = true
-
--- 新行对齐当前行
-o.autoindent = true
-bo.autoindent = true
-o.smartindent = true
-
--- 搜索大小写不敏感，除非包含大写
-o.ignorecase = true
-o.smartcase = true
-
--- 搜索不要高亮
-o.hlsearch = false
-
--- 边输入边搜索
-o.incsearch = true
-
--- 命令行高为2，提供足够的显示空间
-o.cmdheight = 2
-
--- 当文件被外部程序修改时，自动加载
-o.autoread = true
-bo.autoread = true
-
--- 禁止折行
-wo.wrap = true
-
--- 光标在行首尾时<Left><Right>可以跳到下一行
-o.whichwrap = '<,>,[,]'
-
-
--- 允许隐藏被修改过的buffer
-o.hidden = true
-
--- 鼠标支持
-o.mouse:append("a")
+opt.autowrite = true -- Enable auto write
 
 -- 系统剪贴板
-o.clipboard:append("unnamedplus")
-
--- 禁止创建备份文件
-o.backup = false
-o.writebackup = false
-o.swapfile = false
-
--- smaller updatetime
-o.updatetime = 300
-
--- 设置 timeoutlen 为等待键盘快捷键连击时间500毫秒，可根据需要设置
-o.timeoutlen = 500
-
--- split window 从下边和右边出现
-o.splitbelow = true
-o.splitright = true
+opt.clipboard = "unnamedplus" -- Sync with system clipboard
+-- opt.clipboard:append("unnamedplus")
 
 -- 自动补全不自动选中
-vim.g.completeopt = "menu,menuone,noselect,noinsert"
+opt.completeopt = "menu,menuone,noselect"
 
--- 样式
-o.background = "dark"
-o.termguicolors = true
-o.termguicolors = true
+-- 隐藏引号
+opt.conceallevel = 3 -- Hide * markup for bold and italic
+opt.confirm = true -- Confirm to save changes before exiting modified buffer
+opt.cursorline = true -- Enable highlighting of the current line
 
--- 不可见字符的显示，这里只把空格显示为一个点
--- vim.o.list = true
--- vim.o.listchars = "space:·"
+-- 格式选项
+opt.formatoptions = "jcroqlnt" -- tcqj
+opt.grepformat = "%f:%l:%c:%m"
+opt.grepprg = "rg --vimgrep"
 
--- 补全增强
-o.wildmenu = true
+-- 搜索大小写不敏感，除非包含大写
+opt.ignorecase = true -- Ignore case
+opt.smartcase = true -- Don't ignore case with capitals
 
--- Dont' pass messages to |ins-completin menu|
-o.shortmess = vim.o.shortmess .. 'c'
+-- 搜索不要高亮
+opt.hlsearch = false
+
+-- 边输入边搜索
+opt.incsearch = true
+
+opt.inccommand = "nosplit" -- preview incremental substitute
+opt.laststatus = 0
+-- opt.list = true -- Show some invisible characters (tabs...
+
+-- 鼠标支持
+opt.mouse = "a" -- Enable mouse mode
+-- opt.mouse:append("a")
+
+opt.number = true -- Print line number
 
 -- 补全最多显示10行
-o.pumheight = 10
+opt.pumblend = 10 -- Popup blend
+opt.pumheight = 10 -- Maximum number of entries in a popup
 
--- 永远显示 tabline
-o.showtabline = 2
+opt.relativenumber = false -- Relative line numbers
+opt.scrolloff = 4 -- Lines of context
+opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
+opt.shortmess:append({ W = true, I = true, c = true })
 
 -- 使用增强状态栏插件后不再需要 vim 的模式提示
-o.showmode = false
+opt.showmode = false -- Dont show mode since we have a statusline
+opt.sidescrolloff = 8 -- Columns of context
 
--- 外观
--- o.termguicolors = true
--- o.signcolumn = "yes"
--- vim.cmd[[colorscheme tokyonight-moon]]
+-- 显示左侧图标指示列
+opt.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
+
+opt.spelllang = { "en" }
+opt.timeoutlen = 300
+opt.undofile = true
+opt.undolevels = 10000
+opt.updatetime = 200 -- Save swap file and trigger CursorHold
+opt.wildmode = "longest:full,full" -- Command-line completion mode
+opt.winminwidth = 5 -- Minimum window width
+
+-- 禁止折行
+opt.wrap = false -- Disable line wrap
+
+-- 缩进
+opt.tabstop = 2 -- Number of spaces tabs count for
+opt.shiftwidth = 2 -- Size of an indent
+opt.softtabstop = 2
+opt.shiftround = true -- Round indent
+opt.expandtab = true -- Use spaces instead of tabs
+
+-- 新行对齐当前行
+opt.autoindent = true
+opt.smartindent = true -- Insert indents automatically
+
+-- 命令行高为2，提供足够的显示空间
+opt.cmdheight = 2
+
+-- 当文件被外部程序修改时，自动加载
+opt.autoread = true
+
+-- 光标在行首尾时<Left><Right>可以跳到下一行
+opt.whichwrap = '<,>,[,]'
+
+-- 允许隐藏被修改过的buffer
+opt.hidden = true
+
+-- 禁止创建备份文件
+opt.backup = false
+opt.writebackup = false
+opt.swapfile = false
+
+-- split window 从下边和右边出现
+opt.splitbelow = true -- Put new windows below current
+opt.splitright = true -- Put new windows right of current
+
+-- 样式
+opt.background = "dark"
+opt.termguicolors = true -- True color support
+
+-- 补全增强
+opt.wildmenu = true
+
+-- 永远显示 tabline
+-- opt.showtabline = 2
+
+--[[
+if vim.fn.has("nvim-0.9.0") == 1 then
+  opt.splitkeep = "screen"
+  opt.shortmess:append({ C = true })
+end
+]]--
+-- Fix markdown indentation settings
+
+vim.g.markdown_recommended_style = 0
