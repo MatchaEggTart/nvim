@@ -68,7 +68,7 @@ return {
             },
             diagnostics = {
               -- Get the language server to recognize the `vim` global
-              globals = {"vim"},
+              globals = {"vim", },
             },
             workspace = {
               checkThirdParty = false,

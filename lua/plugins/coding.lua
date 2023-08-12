@@ -5,60 +5,56 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		event = { "BufReadPost", "BufNewFile" },
-		dependencies = {
-			{
-				-- "nvim-treesitter/nvim-treesitter-textobjects",
-				-- init = function()
-
-				-- disable rtp plugin, as we only need its queries for mini.ai
-				-- In case other textobject modules are enabled, we will load them
-				-- once nvim-treesitter is loaded
-				-- require("lazy.core.loader").disable_rtp_plugin("nvim-treesitter-textobjects")
-				-- end,
-			},
-		},
+		dependencies = {},
 		cmd = { "TSUpdateSync" },
-		---@type TSConfig
-		opts = {
-			highlight = { enable = true },
-			indent = { enable = true },
-			ensure_installed = {
-				"bash",
-				"c",
-				"html",
-				"javascript",
-				"jsdoc",
-				"json",
-				"lua",
-				"luadoc",
-				"luap",
-				"markdown",
-				"markdown_inline",
-				"python",
-				"query",
-				"regex",
-				"tsx",
-				"typescript",
-				"vim",
-				"vimdoc",
-				"yaml",
-			},
-			---@param opts TSConfig
-			config = function(_, opts)
-				if type(opts.ensure_installed) == "table" then
-					---@type table<string, boolean>
-					local added = {}
-					opts.ensure_installed = vim.tbl_filter(function(lang)
-						if added[lang] then
-							return false
-						end
-						added[lang] = true
-						return true
-					end, opts.ensure_installed)
-				end
-				require("nvim-treesitter.configs").setup(opts)
-			end,
-		},
+
+		config = function()
+			require("nvim-treesitter.configs").setup({
+				modules = {},
+				auto_install = true,
+				sync_install = false,
+				ignore_install = {},
+				highlight = { enable = true, additional_vim_regex_highlighting = false },
+				-- 启用增量选择
+				incremental_selection = {
+					enable = true,
+					keymaps = {
+						init_selection = "<CR>",
+						node_incremental = "<CR>",
+						node_decremental = "<BS>",
+						scope_incremental = "<TAB>",
+					},
+				},
+				indent = { enable = true },
+				ensure_installed = {
+					"bash",
+					"c",
+					"html",
+					"javascript",
+					"jsdoc",
+					"json",
+					"lua",
+					"luadoc",
+					"luap",
+					"markdown",
+					"markdown_inline",
+					"python",
+					"query",
+					"regex",
+					"tsx",
+					"typescript",
+					"vim",
+					"vimdoc",
+					"yaml",
+				},
+			})
+			-- 开启 Folding
+			vim.wo.foldmethod = "expr"
+			vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
+			-- 默认不要折叠
+			-- https://stackoverflow.com/questions/8316139/how-to-set-the-default-to-unfolded-when-you-open-a-file
+			vim.wo.foldlevel = 99
+		end,
 	},
 
 	-- telescopt
