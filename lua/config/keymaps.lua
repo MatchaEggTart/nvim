@@ -8,7 +8,7 @@ map("n", "<leader>w", ":w<CR>", opt)
 map("n", "<leader>wq", ":wqa!<CR>", opt)
 ---- 退出
 map("n", "<leader>q", ":q!<CR>", opt)
-map("n", "<leader>qa", ":qa!<CR>", opt)
+map("n", "<leader>qq", ":qa!<CR>", opt)
 
 ------------------------------------------------------------------
 -- windows 分屏快捷键
@@ -59,11 +59,11 @@ map("t", "<leader>k", [[ <C-\><C-N><C-w>k ]], opt)
 map("t", "<leader>l", [[ <C-\><C-N><C-w>l ]], opt)
 
 -- visual模式下缩进代码
--- map("v", "<", "<gv", opt)
--- map("v", ">", ">gv", opt)
+map("v", "<", "<gv", opt)
+map("v", ">", ">gv", opt)
 -- 上下移动选中文本
--- map("v", "J", ":move '>+1<CR>gv-gv", opt)
--- map("v", "K", ":move '<-2<CR>gv-gv", opt)
+map("v", "J", ":move '>+1<CR>gv-gv", opt)
+map("v", "K", ":move '<-2<CR>gv-gv", opt)
 
 -- 在visual mode 里粘贴不要复制
 -- map("v", "p", '"_dP', opt)
@@ -77,79 +77,7 @@ map("t", "<leader>l", [[ <C-\><C-N><C-w>l ]], opt)
 -- map("n", "<C-u>", "10k", opt)
 -- map("n", "<C-d>", "10j", opt)
 
--- 退出
--- map("n", "qq", ":q!<CR>", opt)
--- map("n", "<leader>q", ":qa!<CR>", opt)
-
 -- insert 模式下，跳到行首行尾
 -- map("i", "<C-h>", "<ESC>I", opt)
 -- map("i", "<C-l>", "<ESC>A", opt)
 
-
---------------------------------------------------------------------
--- 插件快捷键
-local pluginKeys = {}
-
-------------------------------------------------------------------
--- nvim-tree
-------------------------------------------------------------------
--- map("n", "<C-t>", ":NvimTreeToggle<CR>", opt)
--- map("n", "<leader>t", ":NvimTreeToggle<CR>", opt)
--- 列表快捷键
-pluginKeys.nvimTreeList = { -- 打开文件或文件夹
-  { key = { "o", "<2-LeftMouse>" }, action = "edit" },
-  -- 下面那条设置系统打开
-  -- 既记事本打开文档，文件管理器打开文件夹，剧毒
-  -- { key = "s", action = "system_open" },
-  -- v分屏打开文件
-  -- { key = "v", action = "vsplit" },
-  -- h分屏打开文件
-  -- { key = "h", action = "split" },
-  -- Ignore (node_modules)
-  { key = "i", action = "toggle_ignored" },
-  -- Hide (dotfiles)
-  { key = ".", action = "toggle_dotfiles" },
-  -- 文件操作
-  { key = "r", action = "refresh" },
-  { key = "a", action = "create" },
-  { key = "d", action = "remove" },
-  { key = "m", action = "rename" },
-  { key = "x", action = "cut" },
-  { key = "c", action = "copy" },
-  { key = "p", action = "paste" },
-  { key = "y", action = "copy_name" },
-  { key = "Y", action = "copy_path" },
-  { key = "gy", action = "copy_absolute_path" },
-  { key = "I", action = "toggle_file_info" },
-  { key = "n", action = "tabnew" },
-  -- 进入下一级
-  { key = { "]" }, action = "cd" },
-  -- 进入上一级
-  { key = { "[" }, action = "dir_up" },
-}
-
-------------------------------------------------------------------
--- bufferline
-------------------------------------------------------------------
--- 左右Tab切换
-map("n", "<A-h>", ":BufferLineCyclePrev<CR>", opt)
-map("n", "<A-l>", ":BufferLineCycleNext<CR>", opt)
--- "moll/vim-bbye" 关闭当前 buffer
-map("n", "<leader>bc", ":Bdelete!<CR>", opt)
--- map("n", "<C-w>", ":Bdelete!<CR>", opt)
--- 关闭左/右侧标签页
-map("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
-map("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
--- 关闭其他标签页
-map("n", "<leader>bo", ":BufferLineCloseRight<CR>:BufferLineCloseLeft<CR>", opt)
--- 关闭选中标签页
-map("n", "<leader>bp", ":BufferLinePickClose<CR>", opt)
-
-
--- treesitter 折叠
-map("n", "zc", ":foldclose<CR>", opt)
-map("n", "zo", ":foldopen<CR>", opt)
-
-------------------------------------------------------------------
--- Telescope
-------------------------------------------------------------------

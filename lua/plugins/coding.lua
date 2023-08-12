@@ -8,6 +8,10 @@ return {
 		dependencies = {},
 		cmd = { "TSUpdateSync" },
 
+    keys = {
+			{ "zc", ":foldclose<CR>", desc = "foldclose" },
+			{ "zo", ":foldopen<CR>", desc = "foldopen" },
+    },
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				modules = {},
