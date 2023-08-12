@@ -227,10 +227,7 @@ return {
     version = "*",
     dependencies = 'nvim-tree/nvim-web-devicons',
     event = "VeryLazy",
-    config = function()
-      vim.opt.termguicolors = true
-      require("bufferline").setup{
-        -- highlights = {},
+    opts = {
         options = {
           -- 关闭 Tab 的命令，这里使用 moll/vim-bbye 的 :Bdelete 命令
           -- close_command = "Bdelete! %d",
@@ -258,7 +255,10 @@ return {
             return s
           end,
         },
-      }
+    },
+    config = function()
+      vim.opt.termguicolors = true
+      require("bufferline").setup()
     end,
   }
 }
