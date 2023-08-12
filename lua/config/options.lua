@@ -64,7 +64,7 @@ opt.sidescrolloff = 8 -- Columns of context
 opt.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
 
 opt.spelllang = { "en" }
-opt.timeoutlen = 300
+opt.timeoutlen = 500
 opt.undofile = true
 opt.undolevels = 10000
 opt.updatetime = 200 -- Save swap file and trigger CursorHold
