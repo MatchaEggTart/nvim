@@ -1,117 +1,121 @@
+local option = vim.opt
+local buffer = vim.b
+local global = vim.g
+
 -- This file is automatically loaded by plugins.core
-vim.g.mapleader = ","
-vim.g.maplocalleader = "\\"
+global.mapleader = ","
+global.maplocalleader = "\\"
 
 -- utf8
-vim.g.encoding = "UTF-8"
-vim.o.fileencoding = 'UTF-8'
+option.fileencoding = 'UTF-8'
+global.encoding = "UTF-8"
+buffer.fileencoding = 'UTF-8'
 
-local opt = vim.opt
-
-opt.autowrite = true -- Enable auto write
+option.autowrite = true -- Enable auto write
 
 -- 系统剪贴板
-opt.clipboard = "unnamedplus" -- Sync with system clipboard
+option.clipboard = "unnamedplus" -- Sync with system clipboard
 -- opt.clipboard:append("unnamedplus")
 
 -- 自动补全不自动选中
-opt.completeopt = "menu,menuone,noselect"
+option.completeopt = "menu,menuone,noselect"
 
 -- 隐藏引号
-opt.conceallevel = 3 -- Hide * markup for bold and italic
-opt.confirm = true -- Confirm to save changes before exiting modified buffer
-opt.cursorline = true -- Enable highlighting of the current line
+option.conceallevel = 3 -- Hide * markup for bold and italic
+option.confirm = true -- Confirm to save changes before exiting modified buffer
+option.cursorline = true -- Enable highlighting of the current line
 
 -- 格式选项
-opt.formatoptions = "jcroqlnt" -- tcqj
-opt.grepformat = "%f:%l:%c:%m"
-opt.grepprg = "rg --vimgrep"
+option.formatoptions = "jcroqlnt" -- tcqj
+option.grepformat = "%f:%l:%c:%m"
+option.grepprg = "rg --vimgrep"
 
 -- 搜索大小写不敏感，除非包含大写
-opt.ignorecase = true -- Ignore case
-opt.smartcase = true -- Don't ignore case with capitals
+option.ignorecase = true -- Ignore case
+option.smartcase = true -- Don't ignore case with capitals
 
 -- 搜索不要高亮
-opt.hlsearch = false
+option.hlsearch = false
 
 -- 边输入边搜索
-opt.incsearch = true
+option.incsearch = true
 
-opt.inccommand = "nosplit" -- preview incremental substitute
-opt.laststatus = 0
+option.inccommand = "nosplit" -- preview incremental substitute
+option.laststatus = 0
 -- opt.list = true -- Show some invisible characters (tabs...
 
 -- 鼠标支持
-opt.mouse = "a" -- Enable mouse mode
+option.mouse = "a" -- Enable mouse mode
 -- opt.mouse:append("a")
 
-opt.number = true -- Print line number
+option.number = true -- Print line number
 
 -- 补全最多显示10行
-opt.pumblend = 10 -- Popup blend
-opt.pumheight = 10 -- Maximum number of entries in a popup
+option.pumblend = 10 -- Popup blend
+option.pumheight = 10 -- Maximum number of entries in a popup
 
-opt.relativenumber = false -- Relative line numbers
-opt.scrolloff = 4 -- Lines of context
-opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
-opt.shortmess:append({ W = true, I = true, c = true })
+option.relativenumber = false -- Relative line numbers
+option.scrolloff = 4 -- Lines of context
+option.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
+option.shortmess:append({ W = true, I = true, c = true })
 
 -- 使用增强状态栏插件后不再需要 vim 的模式提示
-opt.showmode = false -- Dont show mode since we have a statusline
-opt.sidescrolloff = 8 -- Columns of context
+option.showmode = false -- Dont show mode since we have a statusline
+option.sidescrolloff = 8 -- Columns of context
 
 -- 显示左侧图标指示列
-opt.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
+option.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
 
-opt.spelllang = { "en" }
-opt.timeoutlen = 500
-opt.undofile = true
-opt.undolevels = 10000
-opt.updatetime = 200 -- Save swap file and trigger CursorHold
-opt.wildmode = "longest:full,full" -- Command-line completion mode
-opt.winminwidth = 5 -- Minimum window width
+option.spelllang = { "en" }
+option.timeoutlen = 500
+option.undofile = true
+option.undolevels = 10000
+option.updatetime = 200 -- Save swap file and trigger CursorHold
+option.wildmode = "longest:full,full" -- Command-line completion mode
+option.winminwidth = 5 -- Minimum window width
 
 -- 禁止折行
-opt.wrap = false -- Disable line wrap
+option.wrap = false -- Disable line wrap
 
 -- 缩进
-opt.tabstop = 2 -- Number of spaces tabs count for
-opt.shiftwidth = 2 -- Size of an indent
-opt.softtabstop = 2
-opt.shiftround = true -- Round indent
-opt.expandtab = true -- Use spaces instead of tabs
+option.tabstop = 2 -- Number of spaces tabs count for
+option.shiftwidth = 2 -- Size of an indent
+option.softtabstop = 2
+option.shiftround = true -- Round indent
+option.expandtab = true -- Use spaces instead of tabs
 
 -- 新行对齐当前行
-opt.autoindent = true
-opt.smartindent = true -- Insert indents automatically
+option.autoindent = true
+option.smartindent = true -- Insert indents automatically
 
 -- 命令行高为2，提供足够的显示空间
-opt.cmdheight = 2
+option.cmdheight = 2
 
 -- 当文件被外部程序修改时，自动加载
-opt.autoread = true
+option.autoread = true
 
 -- 光标在行首尾时<Left><Right>可以跳到下一行
-opt.whichwrap = '<,>,[,]'
+option.whichwrap = '<,>,[,]'
 
 -- 允许隐藏被修改过的buffer
-opt.hidden = true
+option.hidden = true
 
 -- 禁止创建备份文件
-opt.backup = false
-opt.writebackup = false
-opt.swapfile = false
+option.backup = false
+option.writebackup = false
+option.swapfile = false
 
 -- split window 从下边和右边出现
-opt.splitbelow = true -- Put new windows below current
-opt.splitright = true -- Put new windows right of current
+option.splitbelow = true -- Put new windows below current
+option.splitright = true -- Put new windows right of current
 
 -- 样式
-opt.background = "dark"
-opt.termguicolors = true -- True color support
+option.background = "dark"
+-- 真色
+option.termguicolors = true -- True color support
 
 -- 补全增强
-opt.wildmenu = true
+option.wildmenu = true
 
 -- 永远显示 tabline
 -- opt.showtabline = 2
@@ -124,4 +128,4 @@ end
 ]]--
 -- Fix markdown indentation settings
 
-vim.g.markdown_recommended_style = 0
+global.markdown_recommended_style = 0
