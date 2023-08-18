@@ -121,7 +121,8 @@ return {
         -- 左侧让出 nvim-tree 的位置，显示文字 File Explorer
         offsets = {
           {
-            filetype = "NvimTree",
+            -- filetype = "NvimTree",
+            filetype = "Neotree",
             text = "File Explorer",
             highlight = "Directory",
             text_align = "left",
