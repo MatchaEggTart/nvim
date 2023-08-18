@@ -29,6 +29,20 @@ return {
     },                                  -- this is equalent to setup({}) function
   },
 
+  -- gcc gbc to Comment
+  {
+    'numToStr/Comment.nvim',
+    lazy = true,
+    event = { 'BufReadPost', 'BufNewFile' },
+    -- event = "InsertEnter",
+    opts = {
+      -- add any options here
+    },
+    config = function ()
+      require('Comment').setup()
+    end,
+  },
+
   -- Lastplace
   {
     "ethanholz/nvim-lastplace",
