@@ -9,6 +9,7 @@ return {
   -- 选中字符，高亮同名字符
   {
     "RRethy/vim-illuminate",
+    event = "VeryLazy",
     config = function()
       require('illuminate').configure()
     end
@@ -17,6 +18,8 @@ return {
   -- 显示 git 修改内容
   {
     "lewis6991/gitsigns.nvim",
+    lazy = true,
+    event = { 'BufReadPost', 'BufNewFile' },
     config = true,
   },
 
@@ -47,14 +50,6 @@ return {
   {
     "ethanholz/nvim-lastplace",
     config = true,
-  },
-
-  -- 驼峰检查
-  {
-    "kamykn/spelunker.vim",
-    config = function()
-      vim.g.spelunker_check_type = 2
-    end
   },
 
   -- Flash

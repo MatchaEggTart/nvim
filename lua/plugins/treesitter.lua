@@ -6,7 +6,7 @@ return {
     build = ":TSUpdate",
     event = { "BufReadPost", "BufNewFile" },
     dependencies = {
-      "nvim-treesitter/playground",
+      -- "nvim-treesitter/playground",
       -- 使用 v 功能时，输入 viw vaw vis vas vi{ va{ 有奇效
       -- 还有 diw daw dis das va{ da{ 进行删除
       "nvim-treesitter/nvim-treesitter-textobjects",
