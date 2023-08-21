@@ -117,6 +117,9 @@ option.termguicolors = true -- True color support
 -- 补全增强
 option.wildmenu = true
 
+-- 项目下的.nvim 配置读取
+option.exrc = false
+
 -- 永远显示 tabline
 -- opt.showtabline = 2
 
