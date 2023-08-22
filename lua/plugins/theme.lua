@@ -48,7 +48,7 @@ return {
           section_separators = { left = " ", right = "" },
         },
         extensions = {
-          "nvim-tree",
+          "neo-tree",
           "toggleterm",
         },
         sections = {
@@ -123,8 +123,8 @@ return {
         offsets = {
           {
             -- filetype = "NvimTree",
-            filetype = "Neotree",
-            text = "File Explorer",
+            filetype = "neo-tree",
+            text = "neo-tree",
             highlight = "Directory",
             text_align = "left",
           },
