@@ -66,12 +66,12 @@ return {
               }
             },
           },
-
-          tsserver = {
-            cmd = { "typescript-language-server", "--stdio" },
-          },
-
         },
+
+        tsserver = {
+          cmd = { "typescript-language-server", "--stdio" },
+        },
+
       },
     },
     config = function(_, opts)
