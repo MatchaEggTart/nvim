@@ -75,7 +75,7 @@ option.wildmode = "longest:full,full" -- Command-line completion mode
 option.winminwidth = 5 -- Minimum window width
 
 -- 禁止折行
-option.wrap = false -- Disable line wrap
+option.wrap = true -- Disable line wrap
 
 -- 缩进
 option.tabstop = 2 -- Number of spaces tabs count for
