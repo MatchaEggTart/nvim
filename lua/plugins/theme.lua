@@ -35,7 +35,8 @@ return {
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
-    lazy = false,
+    -- lazy = false,
+    event = "VeryLazy",
 
     config = function()
       require("lualine").setup({
@@ -159,6 +160,26 @@ return {
     config = function()
       vim.opt.termguicolors = true
       require("bufferline").setup()
+    end,
+  },
+
+  -- lspsaga 必备
+  {
+    "utilyre/barbecue.nvim",
+    name = "barbecue",
+    version = "*",
+    dependencies = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons", -- optional dependency
+    },
+    event = "VeryLazy",
+    opts = {
+      -- configurations go here
+    },
+    config = function()
+      require("barbecue").setup {
+        theme = "tokyonight",
+      }
     end,
   },
 

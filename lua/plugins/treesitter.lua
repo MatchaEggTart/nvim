@@ -11,7 +11,7 @@ return {
       -- 还有 diw daw dis das va{ da{ 进行删除
       "nvim-treesitter/nvim-treesitter-textobjects",
     },
-    cmd = { "TSUpdateSync" },
+    -- cmd = { "TSUpdateSync" },
     -- main = "nvim-treesitter.configs",
     keys = {
       { "zc", ":foldclose<CR>", desc = "foldclose" },
