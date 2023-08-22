@@ -72,6 +72,9 @@ return {
           cmd = { "typescript-language-server", "--stdio" },
         },
 
+        html = {
+
+        },
       },
     },
     config = function(_, opts)
