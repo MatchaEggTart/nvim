@@ -1,5 +1,6 @@
 return {
 
+  --[[ 
   {
     dap = {
       Stopped = { "󰁕 ", "DiagnosticWarn", "DapStoppedLine" },
@@ -57,5 +58,6 @@ return {
       Variable = " ",
     },
   },
+]]
 
 }
