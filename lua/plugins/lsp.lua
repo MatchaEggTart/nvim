@@ -8,7 +8,7 @@ return {
         "williamboman/mason.nvim",
         cmd = "Mason",
         event = "VeryLazy",
-        build = ":MasonUpdate",
+        -- build = ":MasonUpdate",
       },
       {
         "williamboman/mason-lspconfig"
