@@ -21,8 +21,8 @@ option.clipboard = "unnamedplus" -- Sync with system clipboard
 option.completeopt = "menu,menuone,noselect"
 
 -- 隐藏引号
-option.conceallevel = 3 -- Hide * markup for bold and italic
-option.confirm = true -- Confirm to save changes before exiting modified buffer
+option.conceallevel = 3  -- Hide * markup for bold and italic
+option.confirm = true    -- Confirm to save changes before exiting modified buffer
 option.cursorline = true -- Enable highlighting of the current line
 
 -- 格式选项
@@ -32,7 +32,7 @@ option.grepprg = "rg --vimgrep"
 
 -- 搜索大小写不敏感，除非包含大写
 option.ignorecase = true -- Ignore case
-option.smartcase = true -- Don't ignore case with capitals
+option.smartcase = true  -- Don't ignore case with capitals
 
 -- 搜索不要高亮
 option.hlsearch = false
@@ -51,16 +51,16 @@ option.mouse = "a" -- Enable mouse mode
 option.number = true -- Print line number
 
 -- 补全最多显示10行
-option.pumblend = 10 -- Popup blend
-option.pumheight = 10 -- Maximum number of entries in a popup
+option.pumblend = 10          -- Popup blend
+option.pumheight = 10         -- Maximum number of entries in a popup
 
 option.relativenumber = false -- Relative line numbers
-option.scrolloff = 4 -- Lines of context
+option.scrolloff = 4          -- Lines of context
 option.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
 option.shortmess:append({ W = true, I = true, c = true })
 
 -- 使用增强状态栏插件后不再需要 vim 的模式提示
-option.showmode = false -- Dont show mode since we have a statusline
+option.showmode = false  -- Dont show mode since we have a statusline
 option.sidescrolloff = 8 -- Columns of context
 
 -- 显示左侧图标指示列
@@ -70,19 +70,19 @@ option.spelllang = { "en" }
 option.timeoutlen = 500
 option.undofile = true
 option.undolevels = 10000
-option.updatetime = 200 -- Save swap file and trigger CursorHold
+option.updatetime = 200               -- Save swap file and trigger CursorHold
 option.wildmode = "longest:full,full" -- Command-line completion mode
-option.winminwidth = 5 -- Minimum window width
+option.winminwidth = 5                -- Minimum window width
 
 -- 禁止折行
 option.wrap = true -- Disable line wrap
 
 -- 缩进
-option.tabstop = 2 -- Number of spaces tabs count for
-option.shiftwidth = 2 -- Size of an indent
+option.tabstop = 2       -- Number of spaces tabs count for
+option.shiftwidth = 2    -- Size of an indent
 option.softtabstop = 2
 option.shiftround = true -- Round indent
-option.expandtab = true -- Use spaces instead of tabs
+option.expandtab = true  -- Use spaces instead of tabs
 
 -- 新行对齐当前行
 option.autoindent = true
@@ -128,7 +128,17 @@ if vim.fn.has("nvim-0.9.0") == 1 then
   opt.splitkeep = "screen"
   opt.shortmess:append({ C = true })
 end
-]]--
+]]
+   --
 -- Fix markdown indentation settings
 
 global.markdown_recommended_style = 0
+
+if vim.fn.has('wsl') then
+  vim.cmd [[
+  augroup Yank
+  autocmd!
+  autocmd TextYankPost * :call system('/mnt/c/windows/system32/clip.exe ',@")
+  augroup END
+  ]]
+end
