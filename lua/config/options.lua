@@ -14,8 +14,10 @@ buffer.fileencoding = 'UTF-8'
 option.autowrite = true -- Enable auto write
 
 -- 系统剪贴板
-option.clipboard = "unnamedplus" -- Sync with system clipboard
--- opt.clipboard:append("unnamedplus")
+-- option.clipboard = "unnamedplus" -- Sync with system clipboard
+-- kde 需要安装 wl-clipboard
+-- https://wiki.archlinux.org/title/Neovim
+option.clipboard:append("unnamedplus")
 
 -- 自动补全不自动选中
 option.completeopt = "menu,menuone,noselect"
@@ -134,11 +136,11 @@ end
 
 global.markdown_recommended_style = 0
 
-if vim.fn.has('wsl') then
-  vim.cmd [[
-  augroup Yank
-  autocmd!
-  autocmd TextYankPost * :call system('/mnt/c/windows/system32/clip.exe ',@")
-  augroup END
-  ]]
-end
+-- if vim.fn.has('wsl') then
+--   vim.cmd [[
+--   augroup Yank
+--   autocmd!
+--   autocmd TextYankPost * :call system('/mnt/c/windows/system32/clip.exe ',@")
+--   augroup END
+--   --]]
+-- end
