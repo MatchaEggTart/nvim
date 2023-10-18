@@ -131,16 +131,16 @@ if vim.fn.has("nvim-0.9.0") == 1 then
   opt.shortmess:append({ C = true })
 end
 ]]
-   --
+--
 -- Fix markdown indentation settings
 
 global.markdown_recommended_style = 0
 
--- if vim.fn.has('wsl') then
---   vim.cmd [[
---   augroup Yank
---   autocmd!
---   autocmd TextYankPost * :call system('/mnt/c/windows/system32/clip.exe ',@")
---   augroup END
---   --]]
--- end
+if vim.fn.has('wsl') then
+  vim.cmd [[
+   augroup Yank
+   autocmd!
+   autocmd TextYankPost * :call system('/mnt/c/windows/system32/clip.exe ',@")
+   augroup END
+   ]]
+end
